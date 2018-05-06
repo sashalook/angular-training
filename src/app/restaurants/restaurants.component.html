@@ -1,0 +1,14 @@
+
+<h2>{{title | uppercase}}</h2>
+
+<ul>
+
+<li *ngFor='let r of restaurantsService.restaurants'>
+    <a routerLink='/restaurants/{{r.id}}'>
+
+<re-restaurant [restaurant]='r'></re-restaurant>
+</a>
+</li>
+
+
+</ul>

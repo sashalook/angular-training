@@ -1,18 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
+import { RestaurantDetailsComponent } from './restaurants/restaurant-details/restaurant-details.component'
+import { RestaurantsService } from './restaurants/restaurants.service'
+import { SorryMessageComponent } from './sorry-message/sorry-message'
 
+// Routes configuraton for restaurants application: list all paths available
+const routes: Routes = [
+    { path: '', component: HomeComponent },
+    { path: 'restaurants', component: RestaurantsComponent },
+    { path: 'restaurants/:id', component: RestaurantDetailsComponent }, //router will pay attention what id is requested & will pass service
+    { path: '**', component: SorryMessageComponent }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [   //component, directive, pipe
+    AppComponent,
+    HomeComponent,
+    RestaurantComponent,
+    RestaurantsComponent,
+    RestaurantDetailsComponent,
+    SorryMessageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [RestaurantsService],    //all services
+  bootstrap: [AppComponent] //use once to start app work by initializing the component
 })
 export class AppModule { }

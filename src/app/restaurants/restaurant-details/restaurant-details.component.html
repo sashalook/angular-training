@@ -1,0 +1,15 @@
+<h2>Restaurant Details</h2>
+
+<!-- If can't find restaurant id (if id=undefined), won't displa yanything below -->
+<div *ngIf = 'restaurantDetails; else myRef'>   
+<h3>{{restaurantDetails.name}}</h3>
+<strong>Rating:</strong> / {{restaurantDetails.rating}}
+
+<ul>
+    <li *ngFor='let dish of restaurantDetails.dishes'>{{dish}}</li>
+</ul>
+</div>
+
+<ng-template #myRef>
+    <h3>Sorry man, nothing to see here.</h3>
+</ng-template>
