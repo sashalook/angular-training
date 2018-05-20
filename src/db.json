@@ -1,0 +1,59 @@
+{
+  "sandwiches": [
+    {
+      "name": "Salmon sandwich",
+      "sauce": "soy",
+      "ingredients": {
+        "name": "lettuce",
+        "fresh": true
+      },
+      "grilled": false,
+      "price": 89,
+      "id": 2
+    },
+    {
+      "name": "Masala sandwich",
+      "sauce": "jogurt",
+      "ingredients": {
+        "name": "cheese",
+        "fresh": true
+      },
+      "grilled": true,
+      "price": 65,
+      "id": 3
+    },
+    {
+      "name": "Cheese sandwich",
+      "sauce": "bbq",
+      "ingredients": {
+        "name": "cheese",
+        "fresh": true
+      },
+      "grilled": true,
+      "price": 234,
+      "id": 4
+    },
+    {
+      "name": "Tuna sandwich",
+      "sauce": "soy",
+      "ingredients": {
+        "name": "lettuce",
+        "fresh": true
+      },
+      "grilled": null,
+      "price": 67,
+      "id": 5
+    },
+    {
+      "name": "Salmon sandwich",
+      "sauce": "jogurt",
+      "ingredients": {
+        "name": "tomato",
+        "fresh": true
+      },
+      "grilled": null,
+      "price": 24,
+      "id": 6
+    }
+  ]
+}

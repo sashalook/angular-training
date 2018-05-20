@@ -1,0 +1,18 @@
+<section>
+     <gog-sandwich-search (searchText)="searchForSandwiches($event)"></gog-sandwich-search>
+</section>
+
+<section>
+    <gog-sandwich-sort (sort)="sortSandwiches($event)"></gog-sandwich-sort>
+</section>
+
+<section *ngFor="let sandwich of sandwiches | async">
+    <p>
+        <strong>{{sandwich.name}}</strong> ({{sandwich.price | currency}})
+    </p>
+    <p>
+        Ingredients: {{sandwich.ingredients.name}} with {{sandwich.sauce}} sauce.
+    </p>
+    <button type="button" (click)="deleteSandwich(sandwich.id)">Delete</button>
+</section>
+

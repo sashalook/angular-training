@@ -1,0 +1,49 @@
+<!-- name
+
+sauce
+    bbq, soy, jogurt
+
+ingredients
+    ham
+    lettuce
+    tomato
+    tuna
+    cheese
+
+grilled (yes/no)
+
+price -->
+
+<form [formGroup]="sandwichForm" (ngSubmit)="submit()" novalidate>
+<section>
+    <input formControlName="name" type="text" placeholder="Tuna Sandwich">
+    <p *ngIf="showErrors && sandwichForm.get('name').errors?.required" class='required'>This is required!</p>
+    <p *ngIf="showErrors && sandwichForm.get('name').errors?.pattern" class='required'>Name must end with sandwich</p>
+
+</section>
+
+<section>
+    <input formControlName="sauce" value="bbq" type="radio">bbq
+    <input formControlName="sauce" value="soy" type="radio">soy
+    <input formControlName="sauce" value="jogurt" type="radio">jogurt
+</section>
+
+<section>
+    <select formControlName="ingredients">
+        <option value="" disabled>Ingredients...</option>
+        <option *ngFor="let ingredient of ingredients" [ngValue]="ingredient">
+            {{ingredient.name}}
+        </option>
+    </select>
+</section>
+<section>
+    <input formControlName="grilled" type="checkbox">grilled
+</section>
+<section>
+    <input formControlName="price" type="number" placeholder="29.99">
+    <p *ngIf="showErrors && sandwichForm.get('price').errors?.required" class='required'>This is required!</p>
+</section>
+<section>
+    <button type="submit">Submit</button>
+</section>
+</form>

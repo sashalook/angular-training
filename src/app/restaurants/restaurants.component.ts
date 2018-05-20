@@ -10,7 +10,9 @@ export interface Restaurant {
 
 @Component({
     selector:'re-restaurants',
-    templateUrl:'./restaurants.component.html'
+    templateUrl:'./restaurants.component.html',
+    styleUrls: ['./restaurants.component.css']
+
 })
 
 export class RestaurantsComponent {  //all restaurants, inject service here via 'restaurants' variable

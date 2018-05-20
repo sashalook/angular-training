@@ -9,11 +9,16 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { RestaurantDetailsComponent } from './restaurants/restaurant-details/restaurant-details.component'
 import { RestaurantsService } from './restaurants/restaurants.service'
 import { SorryMessageComponent } from './sorry-message/sorry-message'
+import { SandwichModule } from '../sandwich/sandwich.module'
+import { SandwichFormComponent } from '../sandwich/sandwich-form/sandwich-form.component';
+import { SandwichListComponent } from '../sandwich/sandwich-list/sandwich-list.component';
 
 // Routes configuraton for restaurants application: list all paths available
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'restaurants', component: RestaurantsComponent },
+    { path: 'sandwiches', component: SandwichListComponent },
+    { path: 'creator', component: SandwichFormComponent },
     { path: 'restaurants/:id', component: RestaurantDetailsComponent }, //router will pay attention what id is requested & will pass service
     { path: '**', component: SorryMessageComponent }
 ];
@@ -29,7 +34,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SandwichModule,
   ],
     providers: [RestaurantsService],    //all services
   bootstrap: [AppComponent] //use once to start app work by initializing the component
